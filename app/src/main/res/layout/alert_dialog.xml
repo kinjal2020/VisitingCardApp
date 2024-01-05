@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5pt">
+
+
+    <TextView
+        android:id="@+id/textviewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5pt"
+        android:text="Header Theme"
+        android:textSize="20sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/themeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10pt"
+        android:contentDescription="scrolling">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewHeader"
+            android:layout_marginTop="10pt"
+            android:layout_marginBottom="10pt">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardGreen"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/darkGreen"
+                app:cardCornerRadius="75dp">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOrange"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/orange"
+                app:cardCornerRadius="75dp">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardRed"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/red"
+                app:cardCornerRadius="75dp">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBlue"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/darkBlue"
+                app:cardCornerRadius="75dp">
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPink"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/pink"
+                app:cardCornerRadius="75dp">
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/themeLayout">
+
+    </com.google.android.material.divider.MaterialDivider>
+
+
+    <TextView
+        android:id="@+id/textviewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider1"
+        android:layout_margin="5pt"
+        android:text="Content Theme"
+        android:textSize="20sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textviewContent"
+        android:layout_marginTop="5pt"
+        android:contentDescription="scrolling">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewHeader"
+            android:layout_marginBottom="10pt">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBg1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg1" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBg2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/orange">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg2" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBg3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/red">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg3" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBg4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg4" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBg5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:shape="ring"
+                app:cardBackgroundColor="@color/pink">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg5" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/contentLayout">
+
+    </com.google.android.material.divider.MaterialDivider>
+
+
+    <TextView
+        android:id="@+id/textviewFontContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider2"
+        android:layout_margin="5pt"
+        android:text="Content Font Style"
+        android:textSize="20sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/contentFontLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textviewFontContent"
+        android:contentDescription="scrolling">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contentLayout"
+            android:layout_marginStart="5pt"
+            android:layout_marginBottom="10pt">
+
+
+            <TextView
+                android:id="@+id/font1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                android:text="Font"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/font2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/kaushanscript"
+                android:gravity="center"
+                android:text="Font"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/font3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/playpensans"
+                android:gravity="center"
+                android:text="Font"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/font4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/robotoslab"
+                android:gravity="center"
+                android:text="Font"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/font5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/satisfy"
+                android:gravity="center"
+                android:text="Font"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/contentFontLayout">
+
+    </com.google.android.material.divider.MaterialDivider>
+
+
+    <RelativeLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/divider3"
+        android:layout_centerVertical="true">
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10pt"
+            android:backgroundTint="@color/skyBlue"
+            android:onClick="next"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10pt"
+            android:layout_toEndOf="@id/btnSubmit"
+            android:backgroundTint="@color/skyBlue"
+            android:onClick="next"
+            android:text="Cancel" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
