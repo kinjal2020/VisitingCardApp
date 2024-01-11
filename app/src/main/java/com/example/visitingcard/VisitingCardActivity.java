@@ -21,7 +21,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -39,6 +38,7 @@ public class VisitingCardActivity extends AppCompatActivity {
     FloatingActionButton btnEdit;
     RelativeLayout cardLayout;
     RelativeLayout contentLayout;
+    RelativeLayout mainLayout;
 
     CardView btnCall;
     CardView btnEmail;
@@ -291,6 +291,41 @@ public class VisitingCardActivity extends AppCompatActivity {
         });
     }
 
+
+    String getFilePath() {
+        File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        String path = file.getPath() + "Cards";
+        File filePath = new File(path);
+        if (!filePath.exists()) {
+            Log.d("TAG", "ajkdebfcjkvwqaehbsf: " + filePath);
+            file.mkdirs();
+        }
+
+        Log.d("TAG", "getFilePath: " + filePath);
+
+        return path;
+    }
+
+    void saveImage(){
+        mainLayout.setDrawingCacheEnabled(true);
+        Bitmap bitmap=mainLayout.getDrawingCache();
+
+        String path = getFilePath();
+        String finalPath=path+"/"+"card.jpg";
+
+        File file=new File(finalPath);
+        Log.d("TAG", "sjedhjkvfn: " + finalPath);
+        try{
+            FileOutputStream fileOutputStream=new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG,100,fileOutputStream);
+            fileOutputStream.close();
+            mainLayout.invalidate();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     private void initBinding() {
         fNameTextView = findViewById(R.id.textviewFullName);
         companyTextView = findViewById(R.id.textviewCompanyName);
@@ -309,5 +344,6 @@ public class VisitingCardActivity extends AppCompatActivity {
         btnEmail = findViewById(R.id.cardViewEmail);
         btnLocation = findViewById(R.id.cardViewLocation);
         imageView = findViewById(R.id.imageview);
+        mainLayout = findViewById(R.id.mainView);
     }
 }

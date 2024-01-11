@@ -1,5 +1,7 @@
 package com.example.visitingcard;
 
+
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,9 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.PickVisualMediaRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -52,10 +56,18 @@ public class DigitalCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_digital_card);
         initBinding();
+
+        getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                exitDialog();
+            }
+        });
+
         pickMedia = registerForActivityResult(new ActivityResultContracts.PickVisualMedia(), uri -> {
             if (uri != null) {
                 imageView.setImageURI(uri);
-                imageUri=uri;
+                imageUri = uri;
                 Log.d("PhotoPicker", "Selected URI: " + uri);
             } else {
                 Log.d("PhotoPicker", "No media selected");
@@ -109,17 +121,38 @@ public class DigitalCardActivity extends AppCompatActivity {
                     intent.putExtra("email", email);
                     intent.putExtra("address", address);
                     intent.putExtra("service", service);
-                    intent.putExtra("imageView",imageUri.toString());
+                    intent.putExtra("imageView", imageUri.toString());
 
                     startActivity(intent);
                 }
 
-//                Intent intent = new Intent(DigitalCardActivity.this, VisitingCardActivity.class);
-//                startActivity(intent);
 
             }
         });
     }
+
+    private void exitDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).setTitle("Exit")
+                .setMessage("Are you sure want to exit?").
+                setPositiveButton("Yes", null).
+                setNegativeButton("No", null).
+                show();
+        Button mPositiveButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        Button mNegativeButton = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+        mPositiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        mNegativeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+            }
+        });
+    }
+//        alertDialog.setButton("Yes");
 
 
     void initBinding() {
@@ -137,7 +170,5 @@ public class DigitalCardActivity extends AppCompatActivity {
 
     }
 
-    public void next(View view) {
 
-    }
 }
